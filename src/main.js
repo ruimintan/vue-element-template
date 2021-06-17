@@ -16,13 +16,23 @@ import '@/permission' // permission control 全局路由守卫
 import '@/directive' // 全局directive
 import '@/filter' // 全局filter
 
+// import DataTableController from '@/components/apps/base/data/table2/DataTableController'
+
+import RmCharts from '@/components/apps/base/echarts'
+
 import { isPermission } from '@/directive/permission'
 Vue.prototype.$isPermission = isPermission // 全局权限方法
+
+import * as Echarts from 'echarts'
+Vue.prototype.$echarts = Echarts // 全局echarts
 
 Vue.use(ElementUI)
 // Vue.use(ElementUI, { locale })
 
 Vue.config.productionTip = false
+
+// 全局引入
+Vue.component('rm-charts', RmCharts)
 
 // 全局注册
 Object.defineProperty(Vue.prototype, '$utils', {

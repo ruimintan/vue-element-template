@@ -6,7 +6,9 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-import example from './routes/example'
+import dashboard from './modules/dashboard'
+import componentsRouter from './modules/components'
+import chartsRouter from './modules/charts'
 
 /**
 * hidden: true                   if `hidden:true` will not show in the sidebar(default is false)
@@ -28,7 +30,9 @@ export const constantRoutes = [{
 }]
 
 export const asyncRoutes = [
-  ...example,
+  ...dashboard,
+  componentsRouter,
+  chartsRouter,
   {
     path: '*',
     redirect: '/noFound',

@@ -1,24 +1,5 @@
 <template>
   <section class="app-main">
-    <!-- <transition name="fade" mode="out-in">
-      <keep-alive>
-        <router-view v-if="$route.meta.keepAlive" />
-      </keep-alive>
-    </transition>
-
-    <transition name="fade" mode="out-in">
-      <router-view v-if="!$route.meta.keepAlive" />
-    </transition>-->
-
-    <!-- <transition name="fade" mode="out-in">
-      <div>
-        <keep-alive>
-          <router-view v-if="$route.meta.keepAlive" />
-        </keep-alive>
-        <router-view v-if="!$route.meta.keepAlive" />
-      </div>
-    </transition>-->
-
     <keep-alive>
       <router-view v-if="$route.meta.keepAlive" />
     </keep-alive>
