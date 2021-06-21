@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
+import Layout from '@/layout'
 // in development-env not use lazy-loading, because lazy-loading too many pages will cause webpack hot update too slow. so only in production use lazy-loading;
 // detail: https://panjiachen.github.io/vue-element-admin-site/#/lazy-loading
 
@@ -30,6 +30,20 @@ export const constantRoutes = [{
 }]
 
 export const asyncRoutes = [
+  {
+    path: '/',
+    component: Layout,
+    redirect: '/demo',
+    children: [{
+      path: 'demo',
+      name: 'demo',
+      meta: {
+        title: 'demo',
+        icon: 'dashboard',
+      },
+      component: () => import('@/views/demo'),
+    }]
+  },
   ...dashboard,
   componentsRouter,
   chartsRouter,

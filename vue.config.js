@@ -48,6 +48,17 @@ module.exports = {
       },
     },
   },
+  pages:{
+    test: {          
+      entry: 'src/pages/test/index.js',  // 入口文件，相对于多页面应用的main.js，必需。        
+      template: 'public/test.html',    // 应用的模板，相当于单页面应用的 public/index.html，非必需，省略时默认与模块名一致。   
+      filename:'page1.html',   // 编译后 dist 目录中输出的文件名，非必需，省略时默认与模块名一致。
+    }, 
+    index: {          
+      entry: 'src/main.js',          
+      template: 'public/index.html',        
+    }, 
+  },
   chainWebpack(config) {
     config.plugins.delete('preload') // TODO: need test
     config.plugins.delete('prefetch') // TODO: need test
